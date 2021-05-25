@@ -1,0 +1,2 @@
+# JavaScripty
+ study and exercises

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <script>
+        function multiplos3 (inteiro,divisivel){
+            inteiro= document.getElementById("numero").value
+            divisivel=document.getElementById("multiplo").value
+
+            if(inteiro %divisivel==0){
+                console.log(`Numero ${inteiro} é multiplo de ${divisivel}`)
+            }else if(inteiro === undefined && divisivel === undefined){
+                console.log(`Numeros não foram definidos`)
+            }else{console.log(`Numero ${inteiro} não é multiplo de ${divisivel}`)}
+        }
+        
+
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="number" id="numero">
+    <input type="number" id="multiplo">
+    <button type="button" onclick='multiplos3'> try </button>
+    <p id="res">number</p> 
+</body>
+</html>

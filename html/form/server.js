@@ -5,7 +5,7 @@ app.use(express.urlencoded({extended:true}))
 
 app.post('/usuarios',(req,resp)=>{
     console.log(req.body)
-    resp.send('Foi Enviado')
+    resp.send('Foi Enviadonode')
 })
 app.post('/usuarios/:id', (req,resp)=>{
     console.log(req.params.id)

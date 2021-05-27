@@ -1,0 +1,53 @@
+<div wm-slider>
+    <p>
+        <img src="https://miro.medium.com/max/1000/0*aZc7EzGkZD2kzBgb" alt="img1" height="342">
+    </p>
+    <p>
+        <img src="https://programadoresbrasil.com.br/wp-content/uploads/2019/10/0_fUJ-vxQtDB0ssLX7.jpeg" alt="Img2" height="342">
+    </p>
+    <p>
+        <img src="https://cdn.britannica.com/30/199930-131-B3D1D347/computer.jpg" alt="IMG3" height="342">
+    </p>
+</div>
+<style>
+    p{
+        position: absolute;
+        display: none;
+    }
+</style>
+
+<script>
+    function mover(elem,inicio,fim,passo,callback){
+        const novoInicio= inicio-passo
+        if(novoInicio>=fim){
+            elem.style.left=novoInicio +'px'
+            setTimeout(()=>mover(elem,novoInicio,fim,passo,callback),7)
+        }else{
+            callback()
+        }
+    }
+
+    function slider(){
+        const elementos=document.querySelectorAll('[wm-slider]>p')
+        const slides= Array.from(elementos)
+        exibirSlide(slides,slides[0])
+    }
+    function exibirSlide (slides,slide){
+        slide.style.display='block'
+
+        const inicio =innerWidth
+        const fim= -slide.clientWidth
+
+        slide.style.left=`${inicio}px`
+
+        mover(slide,inicio,fim,2.5,()=>{
+            exibirSlide(slides,getPromximo(slides,slide))
+        })
+    }
+    function getPromximo(lista,atual){
+        const i = lista.indexOf(atual)+1
+        return i<lista.length?lista[i]:lista[0]
+    }
+    slider()
+
+</script>

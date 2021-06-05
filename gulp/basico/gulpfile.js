@@ -1,35 +1,36 @@
 const gulp = require('gulp')
-const {parallel} = require('gulp')
-const series=gulp.series
+const { series, parallel } = require('gulp')
 
-
-const inicio=cb=>{
-    console.log('inicio ok')
+const antes1 = cb => {
+    console.log('Tarefa Antes 1!')
     return cb()
 }
 
-const inicio1=cb=>{
-    console.log('inicio ok')
+const antes2 = cb => {
+    console.log('Tarefa Antes 2!')
     return cb()
 }
 
-function copiar(cb){
-    gulp.src(['pastaA/arquivo1.txt','pastaA/arquivo2.txt'])
+function copiar(cb) {
+    // gulp.src(['pastaA/arquivo1.txt', 'pastaA/arquivo2.txt'])
+
+    gulp.src('pastaA/**/*.txt')
+        // .pipe(imagePelaMetade())
+        // .pipe(imageEmPretoEBranco())
+        // .pipe(transformacaoA())
+        // .pipe(transformacaoB())
+        // .pipe(transformacaoC())
         .pipe(gulp.dest('pastaB'))
     return cb()
 }
-function backup(cb){
-    gulp.src('pastaA/teste/*')
-        .pipe(gulp.dest('pastaC'))
+
+const fim = cb => {
+    console.log('Tarefa Fim!')
     return cb()
 }
-const fim=cb=>{
-    console.log('fim ok')
-    return cb()
-}
-this.default=series(
-    parallel(inicio,inicio1),
+
+module.exports.default = series(
+    parallel(antes1, antes2),
     copiar,
-    backup,
     fim,
 )

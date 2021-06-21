@@ -11,5 +11,8 @@
     "gulp-uglifycss": "^1.1.0",
     "node-sass": "^6.0.0",
     "typescript": "^4.3.2"
+  },
+  "devDependencies": {
+    "eslint-plugin-react": "^7.24.0"
   }
 }

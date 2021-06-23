@@ -1,0 +1,12 @@
+.display{
+    grid-column: span 4;
+    background-color: rgba(75, 78, 75, 0.767);
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    text-align: right;
+    padding: 20px;
+    font-size: 2.1em;
+    overflow: hidden;
+}
+

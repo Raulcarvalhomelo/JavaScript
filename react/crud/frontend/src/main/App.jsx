@@ -5,12 +5,12 @@ import './App.css'
 
 import Nav from '../components/template/Nav'
 import Logo from '../components/template/Logo'
-import Home from '../components/home/Home'
+import Routes from './Routes'
 import Footer from '../components/template/Footer'
 export default props=>
     <div className="app">
         <Logo/>
         <Nav/>
-        <Home/>
+        <Routes>
         <Footer/>
     </div>

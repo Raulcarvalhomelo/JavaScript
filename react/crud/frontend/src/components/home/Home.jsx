@@ -4,7 +4,7 @@ import Main from "../template/Main"
 
 export default props=>
     <Main icon="home" title="Home"
-    subtitle="Michely Garcia">
+    subtitle="Joao Pessoa">
         <div className="display-4">Bem Vindo!</div>
         <hr/>
         <p className="mb-0">Sistema para exemplificar a construcao

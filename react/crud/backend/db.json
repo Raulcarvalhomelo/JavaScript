@@ -1,11 +1,18 @@
 {
-    "users":[{
-        "id": 1,
-        "nome":"Raul Melo",
-        "email":"@gmail.com"
-    },{
-        "id": 2,
-        "nome":"Michelly Garcia",
-        "email":"@gmail.com"                
-    }]
+  "users": [
+    {
+      "id": 1,
+      "name": "Raul",
+      "sobrenome": "Melo",
+      "email": "@gmail.com",
+      "contato": "5511873484362"
+    },
+    {
+      "name": "teste",
+      "sobrenome": "te",
+      "email": "eqw3",
+      "contato": "1321124556",
+      "id": 2
+    }
+  ]
 }

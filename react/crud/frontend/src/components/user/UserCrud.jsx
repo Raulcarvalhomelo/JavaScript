@@ -51,7 +51,7 @@ export default class UserCrud extends Component{
         user[event.target.name]=event.target.value
         this.setState({user})
     }
-    laod(user){
+    load(user){
         this.setState({user})
     }
     remove(user){
@@ -87,7 +87,7 @@ export default class UserCrud extends Component{
                     <td>{user.email}</td>
                     <td>{user.contato}</td>
                     <td>
-                        <button className="btn btn-warning"
+                        <button className="btn btn-primary"
                             onClick={()=>this.load(user)}>
                             <i className="fa fa-pencil"></i>
                         </button>
@@ -154,7 +154,7 @@ export default class UserCrud extends Component{
                 </div>
                 <div className="row">
                     <div className="col-12 d-flex justify-content-end">
-                        <button className="btn btn-primary"
+                        <button className="btn btn-success"
                             onClick={e=>this.save(e)}>
                             Salvar
                         </button>

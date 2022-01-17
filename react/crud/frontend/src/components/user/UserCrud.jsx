@@ -56,10 +56,26 @@ export default class UserCrud extends Component{
     }
     remove(user){
         axios.delete(`${baseUrl}/${user.id}`)
+            .then(e=>this.confirm(e))
             .then(resp=>{ 
                 const list =this.getUpdateList(user,false)
                 this.setState({list})
         })
+    }
+    confirm(){
+        return(
+            <button 
+                className="delete button"
+                    onClick={() => {
+                        const confirmBox = window.confirm(
+                            "Do you really want to delete this Crumb?"
+                        )
+                        if (confirmBox === true) {
+                        return true
+                        }
+                    }}>
+            </button>
+        )
     }
     renderTable(){
         return(
@@ -172,6 +188,7 @@ export default class UserCrud extends Component{
     render(){
         return(
             <Main {...headrProps}>
+                {this.confirm()}
                 {this.renderForm()}
                 {this.renderTable()}
             </Main>
